@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/ECS-Snppets/Library
+/ECS-Snppets/obj
+/ECS-Snppets/.vs
+/ECS-Snppets/*.csproj
