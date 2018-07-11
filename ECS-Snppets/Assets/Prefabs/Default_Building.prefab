@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 64642278201674970}
   - component: {fileID: 54919096435387784}
   m_Layer: 2
-  m_Name: Building
+  m_Name: Default_Building
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

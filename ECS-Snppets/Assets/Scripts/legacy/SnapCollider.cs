@@ -33,7 +33,7 @@ public class SnapCollider : MonoBehaviour {
     {
         if (snapON)
         {
-            Debug.Log("Collision with " + other.name);
+            //Debug.Log("Collision with " + other.name);
 
             Ground G = other.GetComponentInParent<Ground>();
             
@@ -44,21 +44,17 @@ public class SnapCollider : MonoBehaviour {
 
                 switch (transform.tag)
                 {
-                    case "West": Vector3 n1 = new Vector3(transform.parent.position.x, offset, transform.position.z - baseSize.z);
-                        Debug.Log("West: " + other.transform.parent.position + " -> " + n1);
-                        other.transform.parent.position = n1;
+                    case "West":
+                        other.transform.parent.position = new Vector3(transform.parent.position.x, offset, transform.position.z - baseSize.z);
                         break;
-                    case "North": Vector3 n2 = new Vector3(transform.parent.position.x - baseSize.x, offset, transform.position.z);
-                        Debug.Log("North: " + other.transform.parent.position + " -> " + n2);
-                        other.transform.parent.position = n2;
+                    case "North": 
+                        other.transform.parent.position = new Vector3(transform.parent.position.x - baseSize.x, offset, transform.position.z);
                         break;
-                    case "East": Vector3 n3 = new Vector3(transform.parent.position.x, offset, transform.position.z + baseSize.z);
-                        Debug.Log("East: " + other.transform.parent.position + " -> " + n3);
-                        other.transform.parent.position = n3;
+                    case "East":
+                        other.transform.parent.position = new Vector3(transform.parent.position.x, offset, transform.position.z + baseSize.z);
                         break;
-                    case "South": Vector3 n4 = new Vector3(transform.parent.position.x + baseSize.x, offset, transform.position.z);
-                        Debug.Log("South: " + other.transform.parent.position + " -> " + n4);
-                        other.transform.parent.position = n4;
+                    case "South":
+                        other.transform.parent.position = new Vector3(transform.parent.position.x + baseSize.x, offset, transform.position.z);
                         break;
                 }
 

@@ -12,7 +12,7 @@ public class Ground : MonoBehaviour {
 
     private void Update()
     {
-        if (isSnapped && !isPlaced && (Mathf.Abs(mousePos.x - Input.GetAxis("Mouse X")) > 0.2f || Mathf.Abs(mousePos.y - Input.GetAxis("Mouse Y")) > 0.2f))
+        if (isSnapped && !isPlaced && (Mathf.Abs(mousePos.x - Input.GetAxis("Mouse X")) > 0.1f || Mathf.Abs(mousePos.y - Input.GetAxis("Mouse Y")) > 0.1f))
         {
             isSnapped = false;
         }
