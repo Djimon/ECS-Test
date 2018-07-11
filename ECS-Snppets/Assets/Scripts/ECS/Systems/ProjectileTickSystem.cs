@@ -12,12 +12,12 @@ namespace ECS
     public class ProjectileDespawnSystem : JobComponentSystem
     {
         [BurstCompile]
-        struct ProjectileLifetimeJob : IJobProcessComponentData<Projectile,Lifetime>
+        struct ProjectileLifetimeJob : IJobProcessComponentData<MyProjectile, MyLifetime>
         {
             // define public variables to get from outside (e.g. deltaTime
             public float deltaTime;
 
-            public void Execute([ReadOnly]ref Projectile proj, ref Lifetime lifetime)
+            public void Execute([ReadOnly]ref MyProjectile proj, ref MyLifetime lifetime)
             {
                 float time = lifetime.Value;
                 float lifeTimeTick = GameManager.LifeTimeTick;

@@ -16,12 +16,12 @@ namespace ECS
     }
 
     [Serializable]
-    public struct Turret : IComponentData
+    public struct MyTurret : IComponentData
     {
         public int ID;
         public TurretType turretType;
         [Range(1, 3)]
         public int Level;
     }
-    public class TurretComponent : ComponentDataWrapper<Turret> { };
+    public class MyTurretComponent : ComponentDataWrapper<MyTurret> { };
 }

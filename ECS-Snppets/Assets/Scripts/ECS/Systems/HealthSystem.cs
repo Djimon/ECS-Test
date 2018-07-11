@@ -11,10 +11,10 @@ namespace ECS
     public class HealthSystem : JobComponentSystem
     {
         [BurstCompile]
-        struct HealthJob : IJobProcessComponentData<Health>
+        struct HealthJob : IJobProcessComponentData<MyHealth>
         {
             // define public variables to get from outside (e.g. deltaTime
-            public void Execute(ref Health health)
+            public void Execute(ref MyHealth health)
             {
                 int h = health.Value;
                 // do Stuff with health

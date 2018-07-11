@@ -17,11 +17,11 @@ namespace ECS
     }
 
     [Serializable]
-    public struct Projectile : IComponentData
+    public struct MyProjectile : IComponentData
     {
         public int ID;
         public ProjectileType turretType;
     }
-    public class ProjectileComponent : ComponentDataWrapper<Projectile> { };
+    public class MyProjectileComponent : ComponentDataWrapper<MyProjectile> { };
 }
 

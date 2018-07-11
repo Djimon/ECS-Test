@@ -7,6 +7,7 @@ using UnityEngine;
 namespace ECS
 {
     [Serializable]
-    public struct Rotation : IComponentData { public Quaternion Value; }
-    public class RotationComponent : ComponentDataWrapper<Rotation> { };
+    public struct MyFrequence : IComponentData { public float Value; }
+    public class MyFrequenceComponent : ComponentDataWrapper<MyFrequence> { };
+
 }

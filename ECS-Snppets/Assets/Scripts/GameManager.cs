@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour {
         {
             float x = Random.Range(-10f, 10f);
             float y = Random.Range(-10f, 10f);
-            EntManager.SetComponentData(ents[i], new Position { Value = new float3(x, y, 0) });
+            EntManager.SetComponentData(ents[i], new MyPosition { Value = new float3(x, y, 0) });
             //EntManager.SetComponentData(ents[i], new Frequence { Value = 3f });
-            EntManager.SetComponentData(ents[i], new Range { Value = 5f });
-            EntManager.SetComponentData(ents[i], new Turret { ID = nextTurret, Level = 0, turretType = 0 });
+            EntManager.SetComponentData(ents[i], new MyRange { Value = 5f });
+            EntManager.SetComponentData(ents[i], new MyTurret { ID = nextTurret, Level = 0, turretType = 0 });
             nextTurret++;
         }
         ents.Dispose();

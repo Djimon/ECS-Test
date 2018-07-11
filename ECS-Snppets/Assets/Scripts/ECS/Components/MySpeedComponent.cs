@@ -7,6 +7,6 @@ using UnityEngine;
 namespace ECS
 {
     [Serializable]
-    public struct Lifetime : IComponentData { public float Value; }
-    public class LifetimeComponent : ComponentDataWrapper<Lifetime> { };
+    public struct MySpeed : IComponentData { public float Value; }
+    public class MySpeedComponent : ComponentDataWrapper<MySpeed> { };
 }

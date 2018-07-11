@@ -8,9 +8,9 @@ using UnityEngine;
 namespace ECS
 {
     [Serializable]
-    public struct Position : IComponentData
+    public struct MyPosition : IComponentData
     {
         public float3 Value;
     }
-    public class PositionComponent : ComponentDataWrapper<Position> { };
+    public class MyPositionComponent : ComponentDataWrapper<MyPosition> { };
 }
