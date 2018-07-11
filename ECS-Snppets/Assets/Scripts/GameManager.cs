@@ -47,7 +47,11 @@ public class GameManager : MonoBehaviour {
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("pressed F");
             AddTurrets();
+        }
+            
 
         JobHandle.ScheduleBatchedJobs();
 	}
