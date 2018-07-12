@@ -7,6 +7,6 @@ using UnityEngine;
 namespace ECS
 {
     [Serializable]
-    public struct MyDamage : IComponentData { public int Value; }
-    public class MyDamageComponent : ComponentDataWrapper<MyDamage> { };
+    public struct Price : IComponentData { public int Value; }
+    public class PriceComponent : ComponentDataWrapper<Price> { };
 }

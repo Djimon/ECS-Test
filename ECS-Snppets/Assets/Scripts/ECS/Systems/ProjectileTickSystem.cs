@@ -9,30 +9,30 @@ using UnityEngine;
 namespace ECS
 {
 
-    public class ProjectileDespawnSystem : JobComponentSystem
-    {
-        [BurstCompile]
-        struct ProjectileLifetimeJob : IJobProcessComponentData<MyProjectile, MyLifetime>
-        {
-            // define public variables to get from outside (e.g. deltaTime
-            public float deltaTime;
+    //public class ProjectileDespawnSystem : JobComponentSystem
+    //{
+    //    [BurstCompile]
+    //    struct ProjectileLifetimeJob : IJobProcessComponentData<Projectile, Lifetime>
+    //    {
+    //        // define public variables to get from outside (e.g. deltaTime
+    //        public float deltaTime;
 
-            public void Execute([ReadOnly]ref MyProjectile proj, ref MyLifetime lifetime)
-            {
-                float time = lifetime.Value;
-                float lifeTimeTick = GameManager.LifeTimeTick;
-                time -= lifeTimeTick;
-                lifetime.Value = time;
-            }
-        }
+    //        public void Execute([ReadOnly]ref Projectile proj, ref Lifetime lifetime)
+    //        {
+    //            float time = lifetime.Value;
+    //            float lifeTimeTick = GameManager.LifeTimeTick;
+    //            time -= lifeTimeTick;
+    //            lifetime.Value = time;
+    //        }
+    //    }
 
-        protected override JobHandle OnUpdate(JobHandle inputDeps)
-        {
-            ProjectileLifetimeJob PMJ = new ProjectileLifetimeJob { deltaTime = Time.deltaTime };
-            JobHandle moveHandle = PMJ.Schedule(this, 64, inputDeps); //64 for low performance, for high cost calculation lower tihs number
-            return moveHandle;
-        }
+    //    protected override JobHandle OnUpdate(JobHandle inputDeps)
+    //    {
+    //        ProjectileLifetimeJob PMJ = new ProjectileLifetimeJob { deltaTime = Time.deltaTime };
+    //        JobHandle moveHandle = PMJ.Schedule(this, 64, inputDeps); //64 for low performance, for high cost calculation lower tihs number
+    //        return moveHandle;
+    //    }
 
-    }
+    //}
 
 }

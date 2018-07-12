@@ -7,7 +7,6 @@ using UnityEngine;
 namespace ECS
 {
     [Serializable]
-    public struct MyFrequence : IComponentData { public float Value; }
-    public class MyFrequenceComponent : ComponentDataWrapper<MyFrequence> { };
-
+    public struct Damage : IComponentData { public int Value; }
+    public class DamageComponent : ComponentDataWrapper<Damage> { };
 }

@@ -16,12 +16,11 @@ namespace ECS
         Magic
     }
 
-    [Serializable]
-    public struct MyProjectile : IComponentData
+    public class Projectile : MonoBehaviour
     {
-        public int ID;
-        public ProjectileType turretType;
+        public float TimeToLive;
+        public float Energy;
+        public ProjectileType Type;
     }
-    public class MyProjectileComponent : ComponentDataWrapper<MyProjectile> { };
 }
 

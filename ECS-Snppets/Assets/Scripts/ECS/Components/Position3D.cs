@@ -7,10 +7,9 @@ using UnityEngine;
 
 namespace ECS
 {
-    [Serializable]
-    public struct MyPosition : IComponentData
+    public class Position3D : MonoBehaviour
     {
         public float3 Value;
     }
-    public class MyPositionComponent : ComponentDataWrapper<MyPosition> { };
+    
 }

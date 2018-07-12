@@ -15,13 +15,10 @@ namespace ECS
         Air
     }
 
-    [Serializable]
-    public struct MyTurret : IComponentData
+    public class Turret : MonoBehaviour
     {
         public int ID;
         public TurretType turretType;
-        [Range(1, 3)]
-        public int Level;
+        public float Range;
     }
-    public class MyTurretComponent : ComponentDataWrapper<MyTurret> { };
 }
