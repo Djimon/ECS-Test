@@ -1,8 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PolygonCollider2D))]
 public class ExtrudeMeshfromPolygon2D : MonoBehaviour {
+
+    public Material VolumeMaterial;
+
+    public void Start()
+    {
+        Destroy(gameObject.GetComponentInChildren<MeshRenderer>());
+        Debug.Log("doooop");
+    }
 
     static Mesh CreateMesh(Vector2[] poly)
     {
@@ -55,5 +65,23 @@ public class ExtrudeMeshfromPolygon2D : MonoBehaviour {
         m.RecalculateBounds();
         //m.Optimize();
         return m;
+    }
+
+    public void GenerateMesh()
+    {
+        PolygonCollider2D col = gameObject.GetComponent<PolygonCollider2D>();
+        Vector2[] polyeder = col.points;
+        GameObject blockingVolume = new GameObject("BlockingVolume");
+        blockingVolume.transform.SetParent(this.gameObject.transform);
+        blockingVolume.transform.position = new Vector3(0,-5,0);
+        blockingVolume.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        MeshRenderer mr = blockingVolume.AddComponent<MeshRenderer>();
+        mr.material = VolumeMaterial;
+        MeshFilter mf = blockingVolume.AddComponent<MeshFilter>();
+        mf.mesh = CreateMesh(polyeder);
+        MeshCollider mc = blockingVolume.AddComponent<MeshCollider>();
+        mc.convex = true;
+        mc.isTrigger = true;
+        blockingVolume.AddComponent<BlockingVolume>();
     }
 }

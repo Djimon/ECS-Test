@@ -14,10 +14,12 @@ public class PlaceObject : MonoBehaviour {
     private GameObject currentObject;
     private Ground currentGround;
     private float positionCorrection;
+    private Color resetColor;
+    private Color forbidColor = Color.red;
 
     //[HideInInspector]
     public bool isPlacing;
-	
+
 	// Update is called once per frame
 	private void Update ()
     {
@@ -34,26 +36,41 @@ public class PlaceObject : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Color c = currentObject.GetComponent<Renderer>().material.color;
-            currentObject.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, 1f);
-            currentGround.Place();
-            currentObject = null;
-            isPlacing = false;
+            if (currentGround.isPlaceable)
+            {
+                Color c = currentObject.GetComponent<Renderer>().material.color;
+                currentObject.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, 1f);
+                currentGround.Place();
+                currentObject = null;
+                isPlacing = false;
+            }
+            else
+            {
+                currentObject.GetComponent<Renderer>().material.color = forbidColor;
+            }
+            
         }
     }
 
     private void MoveObjectwithMouse()
     {
+        if (!currentGround.isPlaceable)
+            currentObject.GetComponent<Renderer>().material.color = forbidColor;
+        else
+            currentObject.GetComponent<Renderer>().material.color = resetColor;
+
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        RaycastHit hit;        
 
         if (Physics.Raycast(ray, out hit) && !currentGround.isSnapped)
         {
             currentObject.transform.position = new Vector3(hit.point.x, positionCorrection, hit.point.z);
-          
+
             //Objekt lehnt sich an schrägen an
             currentObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-        }   
+        }
+
     }
 
     private void HandleNewObjectKey()
@@ -77,10 +94,12 @@ public class PlaceObject : MonoBehaviour {
         {
             isPlacing = true;
             currentObject = Instantiate(prefab);
+            resetColor = currentObject.GetComponent<Renderer>().material.color;
             positionCorrection = currentObject.GetComponent<Collider>().bounds.size.y / 2;
             Color c = currentObject.GetComponent<Renderer>().material.color;
             currentObject.GetComponent<Renderer>().material.color = new Color(c.r, c.g, c.b, 0.5f);
             currentGround = currentObject.GetComponentInChildren<Ground>();
+            currentGround.isPlaceable = true;
         }
     }
 }

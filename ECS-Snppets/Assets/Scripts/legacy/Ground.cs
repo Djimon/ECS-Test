@@ -6,6 +6,7 @@ public class Ground : MonoBehaviour {
 
     public bool isSnapped;
     public bool isPlaced;
+    public bool isPlaceable;
     private float positionCorrection;
 
     public Vector2 mousePos;
@@ -27,6 +28,7 @@ public class Ground : MonoBehaviour {
             sc[i].DeactivateSnapping();
         }
         isSnapped = false;
+        isPlaceable = false;
     }
 
 }

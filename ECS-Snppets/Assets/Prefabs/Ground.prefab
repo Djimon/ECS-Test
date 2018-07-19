@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 64765382024124652}
   m_Layer: 2
   m_Name: Ground
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSnapped: 0
   isPlaced: 0
+  isPlaceable: 0
   mousePos: {x: 0, y: 0}
 --- !u!114 &114571146376172226
 MonoBehaviour:
