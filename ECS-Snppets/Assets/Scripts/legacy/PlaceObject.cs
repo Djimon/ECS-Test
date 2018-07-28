@@ -46,7 +46,7 @@ public class PlaceObject : MonoBehaviour {
             }
             else
             {
-                currentObject.GetComponent<Renderer>().material.color = forbidColor;
+                currentObject.GetComponent<Renderer>().material.color = new Color(1,0,0,resetColor.a);
             }
             
         }
@@ -55,7 +55,7 @@ public class PlaceObject : MonoBehaviour {
     private void MoveObjectwithMouse()
     {
         if (!currentGround.isPlaceable)
-            currentObject.GetComponent<Renderer>().material.color = forbidColor;
+            currentObject.GetComponent<Renderer>().material.color = new Color(1,0,0,resetColor.a);
         else
             currentObject.GetComponent<Renderer>().material.color = resetColor;
 
