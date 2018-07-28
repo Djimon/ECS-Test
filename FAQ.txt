@@ -1,0 +1,14 @@
+clear explaination of concept?
+https://willhart.io/zenobits-unity-ecs-part-1/
+
+Detailed Documentation?
+https://github.com/Unity-Technologies/EntityComponentSystemSamples/blob/master/Documentation/content/ecs_in_detail.md
+
+ComponentSystem vs JobComponentSystem?
+https://forum.unity.com/threads/componentsystem-vs-jobcomponentsystem.526282/
+
+automate file-creation for EC and S
+https://bengsfort.github.io/dev-logs/down-the-ecs-rabbit-hole/
+
+other examples?
+https://www.reddit.com/r/Unity3D/comments/88mc9z/rollaball_pure_ecs_tutorial_is_in_readme/
