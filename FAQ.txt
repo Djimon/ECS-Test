@@ -12,3 +12,8 @@ https://bengsfort.github.io/dev-logs/down-the-ecs-rabbit-hole/
 
 other examples?
 https://www.reddit.com/r/Unity3D/comments/88mc9z/rollaball_pure_ecs_tutorial_is_in_readme/
+
+What is with Animation?
+https://docs.unity3d.com/Manual/class-SkinnedMeshRenderer.html
+https://github.com/Unity-Technologies/Animation-Instancing
+https://github.com/chengkehan/GPUSkinning
