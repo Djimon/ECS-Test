@@ -14,7 +14,7 @@ public class HealthSystem : ComponentSystem {
         public EntityArray Entities;
         public GameObjectArray GameObjects;
 
-        public int Length;
+        public readonly int Length;
     }
     [Inject] private Group_1 g_NoShields;
 
@@ -28,7 +28,7 @@ public class HealthSystem : ComponentSystem {
         public EntityArray Entities;
         public GameObjectArray GameObjects;
 
-        public int Length;
+        public readonly int Length;
     }
     [Inject] private Group_2 g_HaveShields;
 

@@ -10,4 +10,11 @@ public struct HealthComponent : IComponentData
     public float Health { get; set; }
     public float MaxHealth { get; set; }
     public float DamageReceived { get; set; }
+
+    public HealthComponent(float maxHP)
+    {
+        Health = maxHP;
+        MaxHealth = maxHP;
+        DamageReceived = 0f;
+    }
 }
