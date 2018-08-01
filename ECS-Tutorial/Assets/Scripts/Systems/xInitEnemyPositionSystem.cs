@@ -27,7 +27,7 @@ public class xInitEnemyPositionSystem : ComponentSystem {
                 var coeff = (360 / (StartEnemies.Length % 359 + 0.0001f)) * i / 57.3f; //Vodoo-Magic
                 var positions = StartEnemies.Positions[i];
 
-                positions.Value = new float3(math.cos(coeff) * offset, 5, math.sin(coeff) * offset);
+                positions.Value = new float3(math.cos(coeff) * offset, 0.5f, math.sin(coeff) * offset);
 
                 StartEnemies.Positions[i] = positions;
                 Debug.Log("Enemy placed @ " + positions.Value);

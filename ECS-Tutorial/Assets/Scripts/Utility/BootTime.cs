@@ -34,13 +34,11 @@ public class NewBehaviourScript {
         var player = entityManager.CreateEntity(playerArchetype);
         entityManager.AddSharedComponentData(player, playerLookMI);
 
-        HealthComponent standartEnemy = new HealthComponent(50);
-
         for (int i = 0; i < 5; i++)
         {
             var enem = entityManager.CreateEntity(enemyArchetype);
             entityManager.AddSharedComponentData(enem, EnemyLookMI);
-            entityManager.SetComponentData<HealthComponent>(enem, standartEnemy);
+            entityManager.SetComponentData(enem, new HealthComponent {Health = 50, MaxHealth = 50, DamageReceived = 0 });
         }
 
 
